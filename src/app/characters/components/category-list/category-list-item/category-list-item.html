@@ -1,0 +1,84 @@
+<div 
+  class="modal fade" 
+  id="imageSelectorModal" 
+  tabindex="-1"
+  aria-labelledby="imageSelectorLabel" 
+  
+>
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content" 
+      [class.bg-dark]="theme.isDarkMode()"
+      [class.text-light]="theme.isDarkMode()"
+      [class.bg-light]="!theme.isDarkMode()"
+      [class.text-dark]="!theme.isDarkMode()"
+    >
+
+      <!-- CABECERA -->
+      <div class="modal-header border-0 align-items-center justify-content-between">
+        <h3 class="modal-title m-0">{{ modalTitle() }}</h3>
+
+        <!-- Switch para activar el modo "por juego" -->
+        <div class="form-check form-switch ms-3 mt-2">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            id="switchByGame"
+            [checked]="groupByGame()"
+            [disabled]="modalTitle() === 'Favorite game'"
+            (change)="toggleGroupByGame($event)"
+          />
+          <label class="form-check-label" for="switchByGame">Group by game</label>
+        </div>
+
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- CUERPO -->
+      <div class="modal-body">
+
+        @if (groupByGame() && currentGame() === null) {
+
+          <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 row-cols-xl-6 g-3">
+            @for (game of getSelectedGames(); track game) {
+              <div class="col text-center" (click)="selectGame(game)">
+                <img [src]="'images/games/' + game + '.png'" class="img-fluid rounded selectable-image">
+              </div>
+            }
+          </div>
+        }
+
+        @else {
+          @if (groupByGame() && currentGame() !== null) {
+            <button class="btn btn-secondary mb-4" (click)="currentGame.set(null)">
+              ← Back to games
+            </button>
+          }
+
+          <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 row-cols-xl-6 g-3">
+            @for (img of filteredImages() | keyvalue: keepOrder; track img.key) {
+              <div class="col" (click)="checkSelected(img.key) ? selectImage('cancel') : selectImage(img.key)">
+                <div class="image-container">
+                  @if (checkSelected(img.key)) {
+                    <img src="images/others/cancel.png" class="img-fluid rounded selectable-image" alt="cancel">
+                  }
+                  @else {
+                    <img [src]="getImagePathBase(getMiniName(img.key))" class="img-fluid rounded selectable-image" [alt]="img.key">
+                  }
+                  @let firstTrack = img.value[0]?.music?.[0];
+                  @if (modalTitle() === "Favorite character's theme" && firstTrack) {
+                    <button
+                      class="music-icon-btn"
+                      (click)="toggleMusic(firstTrack); $event.stopPropagation()"
+                    >
+                      {{ isPlaying(firstTrack) ? "⏸" : "▶" }}
+                    </button>
+                  }
+                </div>
+              </div>
+            }
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<button
+  class="reset-btn"
+  [class.dark]="theme.isDarkMode()"
+  [class.light]="!theme.isDarkMode()"
+  (click)="resetList()"
+>
+  <i class="bi"
+     [class.bi-trash]="!theme.isDarkMode()"
+     [class.bi-trash-fill]="theme.isDarkMode()">
+  </i>
+</button>

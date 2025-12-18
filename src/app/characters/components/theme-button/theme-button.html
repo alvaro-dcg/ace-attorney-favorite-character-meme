@@ -1,0 +1,9 @@
+<button class="theme-toggle" 
+  [class.dark]="theme.isDarkMode()" 
+  [class.light]="!theme.isDarkMode()" 
+  (click)="toggleDarkMode()">
+
+  <i class="bi" 
+    [class.bi-sun]="!theme.isDarkMode()" 
+    [class.bi-moon]="theme.isDarkMode()"></i>
+</button>

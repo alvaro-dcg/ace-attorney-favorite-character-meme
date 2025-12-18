@@ -1,0 +1,94 @@
+/*Como se muestran las imagenes de las colecciones*/
+.collections {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+@media (max-width: 576px) {
+  .collections {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Contenedor con altura fija */
+.collection {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.collection img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 5px;
+  transition: transform 0.2s, filter 0.3s;
+  border: 2px solid #e0e0e097;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Hover bonito */
+.collection img:hover {
+  transform: scale(1.1);
+}
+
+/* Blanco y negro si está seleccionada */
+.collection.selected img {
+  filter: grayscale(100%);
+}
+
+
+/*Desplegable de juegos*/
+.collection-games {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+  flex-direction: row;
+  justify-content: center;
+  gap: 0.5rem;
+  background: #2b2b2b;
+  border-radius: 10px;
+  padding: 0.5rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.collection:hover .collection-games {
+  display: flex;
+}
+
+/* Cada juego individual */
+.game {
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.game:hover {
+  transform: scale(1.1);
+}
+
+.game img {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  transition: filter 0.3s;
+}
+
+.game.off img {
+  filter: grayscale(100%);
+}
+
+.game span {
+  display: block;
+  font-size: 0.8rem;
+  margin-top: 0.2rem;
+  color: whitesmoke;
+}

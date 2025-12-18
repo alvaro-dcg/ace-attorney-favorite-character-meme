@@ -1,0 +1,84 @@
+/* Tarjeta contenedora */
+.card-custom {
+  background-color: #2b2b2b;
+  border: 2px solid #444;
+  border-radius: 10px;
+  padding: 1rem;
+  transition: all 0.2s ease;
+  width: 102%;
+}
+
+.card-custom:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Título de categoría */
+.category-title {
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+/* Imagen placeholder */
+.image-box {
+  background-color: #d3d3d3;
+  border-radius: 10px;
+  height: 230px;
+  width: 100%;
+  margin-bottom: 0.75rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.image-box-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 10px;
+}
+
+.image-box:hover {
+  background-color: #bbb;
+}
+
+/* Nombre del personaje */
+.character-name {
+  border: 1px solid #666;
+  border-radius: 10px;
+  padding: 0.4rem;
+  color: #fff;
+  background-color: #1e1e1e;
+  font-size: 0.85rem;
+}
+
+
+.card-custom.light {
+  background-color: #f2f2f2; /* 🔹 gris claro */
+  border: 2px solid #ddd;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.card-custom.light .category-title {
+  color: #222;
+}
+
+.card-custom.light .character-name {
+  background-color: #e6e6e6;
+  border: 1px solid #ccc;
+  color: #222;
+}
+
+.card-custom.light .image-box {
+  background-color: #dcdcdc;
+}
+
+.card-custom.light .image-box:hover {
+  background-color: #cfcfcf;
+}

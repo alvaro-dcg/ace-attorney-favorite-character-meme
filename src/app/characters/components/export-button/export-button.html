@@ -1,0 +1,9 @@
+<button class="export-btn btn btn-primary mb-5" (click)="export()" [disabled]="isExporting">
+    @if (!isExporting) {
+        <span>Export as PNG</span>
+    }
+    @else {
+        <span>Exporting...</span>
+    }
+</button>
+

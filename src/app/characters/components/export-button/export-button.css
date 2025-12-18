@@ -1,0 +1,11 @@
+#meme-export {
+  padding: 24px;
+}
+
+.export-btn {
+  height: 70px;
+  width: 200px;
+  font-size: large;
+  bottom: 24px;
+  right: 24px;
+}

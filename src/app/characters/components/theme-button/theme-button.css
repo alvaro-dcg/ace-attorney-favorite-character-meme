@@ -1,0 +1,40 @@
+
+.theme-toggle {
+  position: fixed;
+  top: 15px;
+  right: 20px;
+  z-index: 1000;
+  background-color: #2b2b2b;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.9);
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+  background-color: #444;
+}
+
+.theme-toggle i {
+  font-size: 1.4rem;
+}
+
+/* Estilo cuando está en modo oscuro */
+.theme-toggle.dark {
+  background-color: #f1f1f1;
+  color: #2b2b2b;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.15);
+}
+
+/* Estilo en modo luz */
+.theme-toggle.light {
+  background-color: #2b2b2b;
+  color: #f1f1f1;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.15);
+}

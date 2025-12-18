@@ -1,0 +1,27 @@
+
+<h1 class="m-4">{{pageName()}}</h1>
+
+<div class="collections container">
+    @for (col of collections(); track col.name) {
+        <div class="collection" (click)="toggleCollection(col)" [class.selected]="!col.selected">
+            <img [src]="col.src" [alt]="col.name">
+
+            <!-- Subimágenes que se muestran al hacer hover -->
+            <div class="collection-games mt-2" (click)="$event.stopPropagation()">
+                @for (game of col.games; track game.name) {
+                <div class="game"
+                    (click)="toggleGame(col, game)"
+                    [class.off]="!game.selected"
+                >
+                    <img [src]="game.src" [alt]="game.name">
+                    <span>{{ game.name }}</span>
+                </div>
+                }
+            </div>
+        </div>
+    }
+</div>
+
+
+<app-category-list [activeCollections] = collections()/>
+
