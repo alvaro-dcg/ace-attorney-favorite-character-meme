@@ -316,7 +316,7 @@ export const characters_data: CharacterData = {
   ],
 
   "Dahlia Hawthorne": [
-    {game: GAMES.AA3, category: [CLASSES.WITNESS, CLASSES.CULPRIT], music: ["Dahlia Hawthorne - The Visage of What Once Was"]}
+    {game: GAMES.AA3, category: [CLASSES.WITNESS, CLASSES.CULPRIT], music: ["Dahlia Hawthorne - The Visage of What Once Was"], breakdown: ["Dahlia Hawthorne"]}
   ],
 
   "Winston Payne (younger)": [
@@ -332,7 +332,7 @@ export const characters_data: CharacterData = {
   ],
 
   "Luke Atmey": [
-    {game: GAMES.AA3, category: [CLASSES.WITNESS, CLASSES.CULPRIT, CLASSES.DETECTIVE], music:["Luke Atmey - Look at Me"]}
+    {game: GAMES.AA3, category: [CLASSES.WITNESS, CLASSES.CULPRIT, CLASSES.DETECTIVE], music:["Luke Atmey - Look at Me"], breakdown: ["Luke Atmey"]}
   ],
 
   "Ron DeLite": [
@@ -348,7 +348,7 @@ export const characters_data: CharacterData = {
   ],
 
   "Godot": [
-    {game: GAMES.AA3, category: [CLASSES.PROSECUTOR, CLASSES.CULPRIT], music: ["Godot - The Fragrance of Dark Coffee"]}
+    {game: GAMES.AA3, category: [CLASSES.PROSECUTOR, CLASSES.CULPRIT], music: ["Godot - The Fragrance of Dark Coffee"], breakdown: ["Godot"]}
   ],
 
   "Kane Bullard": [
@@ -388,7 +388,7 @@ export const characters_data: CharacterData = {
   ],
 
   "Furio Tigre": [
-    {game: GAMES.AA3, category: [CLASSES.WITNESS, CLASSES.CULPRIT, CLASSES.DEFENSE], music: ["Furio Tigre - Swingin' Tiger"]}
+    {game: GAMES.AA3, category: [CLASSES.WITNESS, CLASSES.CULPRIT, CLASSES.DEFENSE], music: ["Furio Tigre - Swingin' Tiger"], breakdown: ["Furio Tigre"]}
   ],
 
   "Bruto Cadaverini": [
