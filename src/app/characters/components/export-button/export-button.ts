@@ -15,8 +15,8 @@ export class ExportButton {
   isExporting = false;
 
   constructor(
-    private theme: ThemeService, 
-    private cdr: ChangeDetectorRef, 
+    private theme: ThemeService,
+    private cdr: ChangeDetectorRef,
     public collectionsService: CollectionsService
   ) { }
 
@@ -57,19 +57,26 @@ export class ExportButton {
 
         collectionsContainer.style.display = 'flex';
         collectionsContainer.style.flexDirection = 'row';
-        collectionsContainer.style.flexWrap = 'nowrap'; // no saltar de línea
+        collectionsContainer.style.flexWrap = window.innerWidth < 768 ? 'wrap' : 'nowrap'; // no saltar de línea
         collectionsContainer.style.gap = '8px';
         collectionsContainer.style.alignItems = 'center';
         collectionsContainer.style.justifyContent = 'center';
+        collectionsContainer.style.maxWidth = '100%';
 
         collectionsValue.forEach(col => {
           // iteramos todos los juegos, no solo los seleccionados
           col.games.forEach(game => {
             const img = document.createElement('img');
             img.src = game.src;
-            img.style.height = '80px'; // importante para que quepan en una fila
             img.style.width = 'auto';
             img.style.display = 'block';
+
+            // ancho según tamaño de pantalla
+            if (window.innerWidth < 768) {
+              img.style.width = 'calc(20% - 8px)'; // 5 imágenes por fila
+            } else {
+              img.style.width = '80px'; // ancho fijo en PC
+            }
 
             // si no está seleccionado, aplicar filtro de blanco y negro
             if (!game.selected) {
