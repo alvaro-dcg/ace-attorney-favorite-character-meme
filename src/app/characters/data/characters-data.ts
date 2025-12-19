@@ -766,7 +766,7 @@ export const characters_data: CharacterData = {
   ],
 
   "Pees'lubn Andistan'dhin": [
-    {game: GAMES.AA6, category: [CLASSES.WITNESS, CLASSES.CULPRIT], music: ["Pees'lubn Andistan'dhin - Ethnic Music"], breakdown: ["Pees'lubn Andistan'dhin"]}
+    {game: GAMES.AA6, category: [CLASSES.WITNESS, CLASSES.CULPRIT], music: ["Pees'lubn Andistan'dhin - Ethnic Music", "Pees'lubn Andistan'dhin - Head-Banging"], breakdown: ["Pees'lubn Andistan'dhin"]}
   ],
 
   "Bonny de Famme": [
@@ -834,7 +834,7 @@ export const characters_data: CharacterData = {
   ],
 
   "Dhurke Sahdmadhi": [
-    {game: GAMES.AA6, category: [CLASSES.ASSISTANT, CLASSES.VICTIM], music: ["Dhurke - A Dragon Never Yields"]}
+    {game: GAMES.AA6, category: [CLASSES.ASSISTANT, CLASSES.DEFENDANT, CLASSES.VICTIM], music: ["Dhurke - A Dragon Never Yields"]}
   ],
 
   "Archie Buff": [
@@ -1408,7 +1408,7 @@ export const characters_data: CharacterData = {
   ],
 
   "Kazuma Asogi (Unmasked)": [
-    {game: GAMES.GAA2, category: [CLASSES.PROSECUTOR]}
+    {game: GAMES.GAA2, category: [CLASSES.PROSECUTOR], music: ["The Revived Prosecutor"]}
   ],
 
   "Klint van Zieks": [

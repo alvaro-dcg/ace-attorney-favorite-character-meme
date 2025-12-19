@@ -61,6 +61,16 @@
   z-index: 1000;
 }
 
+.collection-games.light {
+  background: #dcdcdc;
+}
+
+.collection-games.light span {
+  color: black;
+}
+
+
+
 .collection:hover .collection-games {
   display: flex;
 }

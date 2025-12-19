@@ -6,6 +6,7 @@ import { CategoryListService } from '../../services/category-list.service';
 import { characters_data } from '../../data/characters-data';
 import { mechanics } from '../../data/mechanics-data';
 import { cases } from '../../data/cases-data';
+import { ThemeService } from '../../services/theme.service';
 
 
 @Component({
@@ -19,6 +20,7 @@ export class Collections {
   pageName = signal<string>('Ace Attorney Favorite Character Meme');
   collections = signal<Collection[]>(collections_data);
   categoryListService = inject(CategoryListService);
+  constructor(public theme: ThemeService) {}
 
 
   // Aciva o desactiva una coleccion. Tambien desactiva sus juegos
